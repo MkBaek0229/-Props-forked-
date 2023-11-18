@@ -1,38 +1,24 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import Logo from "./Componets/Logo/index";
+import Header from "./Componets/Header/index";
+import Count from "./Componets/Count/index";
+import Paragraph from "./Componets/ParaGraph/index";
+import Footer from "./Componets/Footer/index";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <div>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-      </div>
-      <h1>React + Vite</h1>
-      <h2>On CodeSandbox!</h2>
+      {/* Logo.propTypes가 number로선언되있어서 아래와같이 문자열로 props을 넘기면
+     console을 열어보면 error가 발생한걸 알수있음  */}
+      <Logo size="150px" />
+      <Logo />
+      <Logo size={100} />
+      <Header />
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR.
-        </p>
-
-        <p>
-          Tip: you can use the inspector button next to address bar to click on
-          components in the preview and open the code in the editor!
-        </p>
+        <Count />
+        <Paragraph />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Footer />
     </div>
   );
 }
